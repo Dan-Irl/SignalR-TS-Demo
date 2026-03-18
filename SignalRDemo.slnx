@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SignalRDemo.API/SignalRDemo.API.csproj" />
+  <Project Path="SignalRDemo.AppHost/SignalRDemo.AppHost.csproj" />
+  <Project Path="SignalRDemo.ServiceDefaults/SignalRDemo.ServiceDefaults.csproj" />
+</Solution>
