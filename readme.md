@@ -17,6 +17,28 @@ dotnet tool restore
 aspire run
 ```
 
+## Project Structure
+
+```
+SignalR-TS-Demo/
+├── SignalRDemo.API/           # .NET SignalR backend
+│   ├── Chat/
+│   │   ├── IChatHub.cs        # Hub interface
+│   │   ├── IChatReceiver.cs   # Receiver interface
+│   │   ├── ChatHub.cs         # Hub implementation
+│   │   └── Message.cs         # Message record
+│   └── Program.cs
+├── SignalRDemo.Frontend/      # React frontend
+│   └── src/
+│       ├── contexts/          # ChatHub React context
+│       │   ├── ChatHubProvider
+│       │   └── Hooks
+│       ├── generated_hub/     # Generated TypeScript files
+│       ├── ChatComponent.tsx
+│       └── App.tsx
+└── SignalRDemo.AppHost/       # .NET Aspire orchestration
+```
+
 ## Architecture
 
 ### Backend (.NET 10)
@@ -177,28 +199,6 @@ function App() {
         </ChatHubProvider>
     );
 }
-```
-
-## roject Structure
-
-```
-SignalR-TS-Demo/
-├── SignalRDemo.API/           # .NET SignalR backend
-│   ├── Chat/
-│   │   ├── IChatHub.cs        # Hub interface
-│   │   ├── IChatReceiver.cs   # Receiver interface
-│   │   ├── ChatHub.cs         # Hub implementation
-│   │   └── Message.cs         # Message record
-│   └── Program.cs
-├── SignalRDemo.Frontend/      # React frontend
-│   └── src/
-│       ├── contexts/          # ChatHub React context
-│       │   ├── ChatHubProvider
-│       │   └── Hooks
-│       ├── generated_hub/     # Generated TypeScript files
-│       ├── ChatComponent.tsx
-│       └── App.tsx
-└── SignalRDemo.AppHost/       # .NET Aspire orchestration
 ```
 
 ## Docs
