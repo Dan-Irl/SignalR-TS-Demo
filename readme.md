@@ -2,7 +2,7 @@
 
 A strongly-typed SignalR chat application demonstrating real-time communication between .NET and React using automatically generated TypeScript types.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
