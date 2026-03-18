@@ -88,12 +88,11 @@ function App() {
 
 ```typescript
 import { useMemo } from 'react';
-import { useChatHub, useChatHubProxy, useRegisterReceiver } from './contexts';
+import { useChatHub, useRegisterChatRecevier } from './contexts';
 import type { IChatReceiver, Message } from './contexts';
 
 function ChatComponent() {
-    const { isConnected, connectionState, error } = useChatHub();
-    const hub = useChatHubProxy();
+    const hub = useChatHub();
     const [messages, setMessages] = useState<Message[]>([]);
 
     // Register event handlers
@@ -112,7 +111,7 @@ function ChatComponent() {
         [],
     );
 
-    useRegisterReceiver(receiver);
+    useRegisterChatRecevier(receiver);
 
     // Call hub methods
     const sendMessage = async () => {
@@ -123,7 +122,7 @@ function ChatComponent() {
     };
 
     return (
-        <button onClick={sendMessage} disabled={!isConnected}>
+        <button onClick={sendMessage}>
             Send Message
         </button>
     );
@@ -145,7 +144,7 @@ You get full TypeScript type safety:
 
 ```typescript
 // With proxy - Full IntelliSense and compile-time checking
-const hub = useChatHubProxy();
+const hub = useChatHub();
 await hub.sendMessage("Hello");  // TypeScript validates method exists and parameters are correct
 ```
 
